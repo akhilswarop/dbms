@@ -2,7 +2,7 @@
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    
+
     <meta name="description" content="">
     <title>Home</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
@@ -11,12 +11,6 @@
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.1.5, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
-    
-    
-    
-    
-    
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -29,12 +23,12 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-1607"><div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
-        <a href="admin-2.html" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-1">ADMIN</a>
-        <a href="Home.html" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500" title="Home">
+        <a href="ADMIN.php" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-1">ADMIN</a>
+        <a href="Home.php" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500" title="Home">
           <img class="u-logo-image u-logo-image-1" src="images/TWAD-Board-Recruitment.png">
         </a>
-        <a href="VENDOR.html" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-2">VENDOR</a>
-        <a href="Home.html#sec-77dc" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-3">CONSUMER</a>
+        <a href="VENDOR.php" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-2">VENDOR</a>
+        <a href="Home.php#sec-77dc" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-3">CONSUMER</a>
       </div></header> 
     <section class="u-align-right u-clearfix u-image u-shading u-section-1" id="sec-ba97" data-image-width="1280" data-image-height="853">
       <div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
@@ -56,25 +50,25 @@
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-align-left-xl u-container-style u-image u-list-item u-repeater-item u-shading u-image-1" src="" data-image-width="1280" data-image-height="853">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
-                <a href="Home.html#carousel_f214" class="u-active-palette-4-base u-align-center u-btn u-button-style u-hover-palette-4-base u-text-active-white u-text-hover-white u-white u-btn-1">consumer<br>&nbsp;bill
+                <a href="Home.php#carousel_f214" class="u-active-palette-4-base u-align-center u-btn u-button-style u-hover-palette-4-base u-text-active-white u-text-hover-white u-white u-btn-1">consumer<br>&nbsp;bill
                 </a>
               </div>
             </div>
             <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-align-left-xl u-container-style u-image u-list-item u-repeater-item u-shading u-image-2" src="" data-image-width="1280" data-image-height="852">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2">
-                <a href="Home.html#carousel_fdbc" class="u-active-palette-4-base u-align-center u-btn u-button-style u-hover-palette-4-base u-text-active-white u-text-hover-white u-white u-btn-2">consumer<br>&nbsp;update
+                <a href="Home.php#carousel_fdbc" class="u-active-palette-4-base u-align-center u-btn u-button-style u-hover-palette-4-base u-text-active-white u-text-hover-white u-white u-btn-2">consumer<br>&nbsp;update
                 </a>
               </div>
             </div>
             <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-align-left-xl u-container-style u-image u-list-item u-repeater-item u-shading u-image-3" src="" data-image-width="1280" data-image-height="853" data-animation-out="0">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
-                <a href="Home.html#carousel_b7a6" class="u-active-palette-4-base u-align-center u-btn u-button-style u-hover-palette-4-base u-text-active-white u-text-hover-white u-white u-btn-3">industrial<br>&nbsp;bill
+                <a href="Home.php#carousel_b7a6" class="u-active-palette-4-base u-align-center u-btn u-button-style u-hover-palette-4-base u-text-active-white u-text-hover-white u-white u-btn-3">industrial<br>&nbsp;bill
                 </a>
               </div>
             </div>
             <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-align-left-xl u-container-style u-image u-list-item u-repeater-item u-shading u-image-4" src="" data-image-width="1280" data-image-height="853">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
-                <a href="Home.html#carousel_b950" class="u-active-palette-4-base u-align-center u-btn u-button-style u-hover-palette-4-base u-text-active-white u-text-hover-white u-white u-btn-4">industrial<br>&nbsp;update
+                <a href="Home.php#carousel_b950" class="u-active-palette-4-base u-align-center u-btn u-button-style u-hover-palette-4-base u-text-active-white u-text-hover-white u-white u-btn-4">industrial<br>&nbsp;update
                 </a>
               </div>
             </div>
@@ -110,7 +104,9 @@
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle" data-href="USER-UPDATE.html" title="USER UPDATE">
               <div class="u-container-layout u-similar-container u-container-layout-1">
+                <a href="USER-UPDATE.php">
                 <div alt="" class="u-border-12 u-border-white u-hover-feature u-image u-image-circle u-image-1" data-image-width="1280" data-image-height="853"></div>
+              </a>
                 <h6 class="u-text u-text-body-alt-color u-text-default-xl u-text-2">update phone number</h6>
                 <p class="u-text u-text-body-alt-color u-text-3">By clicking this you will be redireted to a form using which you can update your registered phone number</p>
               </div>
@@ -132,7 +128,7 @@
               </div>
               <div class="u-align-center u-container-style u-layout-cell u-size-20-xl u-size-27-lg u-size-60-md u-size-60-sm u-size-60-xs u-white u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <a href="INDUSTRY-BILL.html" class="u-active-black u-border-none u-btn u-button-style u-hover-black u-palette-4-base u-btn-1">GENERATE BILL</a>
+                  <a href="INDUSTRY-BILL.php" class="u-active-black u-border-none u-btn u-button-style u-hover-black u-palette-4-base u-btn-1">GENERATE BILL</a>
                 </div>
               </div>
             </div>
@@ -145,7 +141,7 @@
         <h2 class="u-text u-text-body-alt-color u-text-default u-text-1">Industry update</h2>
         <div class="u-expanded-width-xs u-list u-list-1">
           <div class="u-repeater u-repeater-1">
-            <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle" data-href="INDUSTRY-UPDATE.html" title="INDUSTRY UPDATE">
+            <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle" data-href="INDUSTRY-UPDATE.php" title="INDUSTRY UPDATE">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
                 <div alt="" class="u-border-12 u-border-white u-hover-feature u-image u-image-circle u-image-1" data-image-width="1280" data-image-height="853"></div>
                 <h6 class="u-text u-text-body-alt-color u-text-default-xl u-text-2">update industry name</h6>

@@ -13,13 +13,36 @@
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
-    
+    <?php
+  // Set the login and password values
+  $login = "admin";
+  $password = "password";
+
+  // Check if the login and password match the predetermined values
+  if (isset($_POST["submit"])) {
+    if ($_POST["login"] == $login && $_POST["password"] == $password) {
+      // Redirect the user to the next page
+      header("admin");
+      exit;
+    } else {
+      // Display an error message
+      echo "Invalid login or password";
+    }
+  }
+?>
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
 		"logo": "images/TWAD-Board-Recruitment.png"
 }</script>
+<style>
+  input[type="submit"] {
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+}
+  </style>
     <meta name="theme-color" content="#0149b8">
     <meta property="og:title" content="Page 1">
     <meta property="og:type" content="website">
@@ -35,7 +58,7 @@
     <section class="u-align-center u-clearfix u-gradient u-section-1" id="sec-aca8">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-shape u-shape-svg u-text-black u-shape-1">
-          <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e899"></use></svg>
+          <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e899"></use></svg>
           <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-e899" style="enable-background:new 0 0 160 160;"><path d="M0,153.3L153.3,0h6.7L0,160V153.3z M129.6,0h6.7L0,136.3v-6.7L129.6,0z M105.6,0h6.7L0,112.3v-6.7L105.6,0z M81.6,0h6.7
 	L0,88.3v-6.7L81.6,0z M57.6,0h6.7L0,64.3v-6.7L57.6,0z M33.3,0H40L0,40v-6.7L33.3,0z M9.6,0h6.7L0,16.3V9.6L9.6,0z M18.9,160
 	L160,18.9v6.7L25.6,160H18.9z M44.5,160L160,44.5v6.7L51.2,160H44.5z M70.2,160L160,70.2V77l-83,83H70.2z M95.8,160L160,95.8v6.7
@@ -48,7 +71,7 @@
           </div>
         </div>
         <div class="u-shape u-shape-svg u-text-grey-90 u-shape-2">
-          <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-807b"></use></svg>
+          <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-807b"></use></svg>
           <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-807b"><path d="M114.3,152.3l38-38C144.4,130.9,130.9,144.4,114.3,152.3z M117.1,9.1l-108,108c0.8,1.6,1.7,3.2,2.7,4.8l110-110
 	C120.3,10.9,118.7,10,117.1,9.1z M97.5,2L2,97.5c0.4,2,1,4,1.5,5.9l99.9-99.9C101.5,2.9,99.5,2.4,97.5,2z M80,160c2,0,4-0.1,5.9-0.2
 	l73.9-73.9c0.1-2,0.2-3.9,0.2-5.9c0-0.6,0-1.2,0-1.9L78.1,160C78.8,160,79.4,160,80,160z M34.9,146.1c1.5,1,3,2,4.6,2.9L149,39.5
@@ -58,7 +81,7 @@
 	C80.2,0,80.1,0,80,0z"></path></svg>
         </div>
         <div class="u-form u-white u-form-1">
-          <form action="https://forms.nicepagesrv.com/Form/Process" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;" source="email" name="form">
+          <form class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;" source="email" name="form" method="post">
             <div class="u-form-group u-form-name u-label-top u-form-group-1">
               <label for="name-6797" class="u-label">HOUSE ID</label>
               <input type="text" placeholder="enter house_id" id="name-6797" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="">
@@ -74,7 +97,7 @@
             <div class="u-form-group u-form-select u-label-top u-form-group-4">
               <label for="select-1c32" class="u-label">CANAL NAME</label>
               <div class="u-form-select-wrapper">
-                <select id="select-1c32" name="Select the respective canal" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                <select id="select-1c32" name="select1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
                   <option value="c104">c104</option>
                   <option value="c105">c105</option>
                   <option value="c110">c110</option>
@@ -85,27 +108,44 @@
                 <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
               </div>
             </div>
-            <div class="u-form-group u-form-select u-label-top u-form-group-5">
-              <label for="select-b759" class="u-label">SOURCE ID</label>
-              <div class="u-form-select-wrapper">
-                <select id="select-b759" name="select source id" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
-                  <option value="s1010">s1010</option>
-                  <option value="s1013">s1013</option>
-                  <option value="s1014">s1014</option>
-                  <option value="s1016">s1016</option>
-                </select>
-                <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
-              </div>
-            </div>
             <div class="u-align-left u-form-group u-form-submit u-label-top u-form-group-6">
-              <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
-              <input type="submit" value="submit" class="u-form-control-hidden">
+              <input type="submit" name="submit" value="Submit" name="submit">
             </div>
-            <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
-            <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
-            <input type="hidden" value="" name="recaptchaResponse">
-            <input type="hidden" name="formServices" value="d568939bf274436eab60a7597d46000b">
           </form>
+          <div style="width: 50%;  margin: 0 auto; margin-bottom: 10px;text-align: center;">
+              <h6 style="text-align: center;">PHP Output</h6>
+      <?php
+        $host = "localhost";
+        $user = "root";
+        $password = "";
+        $dbname = "water_distribution";
+        
+        $conn = mysqli_connect($host, $user, $password, $dbname);
+        
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        echo "Connected Succesfully\n";
+        if(isset($_POST['submit'])){
+        // Get the form data
+        $h_id = $_POST['name'];
+        $h_address = $_POST['message'];
+        $ph_no = $_POST['email'];
+        $c_name = $_POST['select1'];
+        
+        // Insert the data into the industries table
+        $sql = "INSERT INTO house(h_id, address, ph_no, c_name) VALUES ('$h_id', '$h_address', '$ph_no', '$c_name');";
+        
+        if (mysqli_query($conn, $sql)) {
+            echo "\nNew record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+        
+        mysqli_close($conn);}
+
+      ?>
+    </div>
         </div>
       </div>
     </section>
