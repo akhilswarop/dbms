@@ -14,6 +14,10 @@
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     <style>
+          iframe{
+      display: block;
+      margin:  auto;
+    }
     input[type="submit"] {
   display: block;
   margin: 0 auto;
@@ -59,7 +63,7 @@
 
           
               </form>
-              <?php
+        <?php
         $host = "localhost";
         $user = "root";
         $password = "";
@@ -96,9 +100,9 @@
             echo '<td>' . $row['wc']*0.8 . '</td>';
             echo '</tr>';
         }
-        
         // Close the table
         echo '</table>';
+        echo "<iframe frameborder='0' width='500px' height='320px' scrolling='no' src='data-visualization-i.php'>";
       } 
       else {
           // If there are no results, display a message

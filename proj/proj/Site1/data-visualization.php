@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+<style>
+*{
+  font-family:Montserrat;
+  text-align: center;
+}
+</style>
 <?php
 	$conn = new mysqli('localhost','root','','water_distribution');
 	if($conn->connect_error){
@@ -19,10 +26,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <title>State Details</title>
 </head>
 <body>
-
+<h3>Usage Statistics</h3>
 <div style="display: flex;">
   <div style="width: 50%;">
     <canvas id="barChart"></canvas>
@@ -37,7 +43,6 @@
   const data = {
     labels: labels,
     datasets: [{
-      label: 'Usage Statistics For Houses',
       data: <?php echo json_encode($deaths) ?>,
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',

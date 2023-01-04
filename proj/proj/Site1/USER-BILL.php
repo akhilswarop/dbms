@@ -22,6 +22,10 @@
     <meta property="og:title" content="USER BILL">
     <meta property="og:type" content="website">
   <style>
+    iframe{
+      display: block;
+      margin:  auto;
+    }
     input[type="submit"] {
   display: block;
   margin: 0 auto;
@@ -82,7 +86,7 @@
         if ($result) {
           echo '<table border="1">';
           // Fetch each row of the result set and display it as a table row
-          while ($row = mysqli_fetch_assoc($result)) {
+          while ($row = mysqli_fetch_assoc($result)){
                     echo "<h4 style='text-align:center;'>Total Bill</h3>";
             echo '<tr>';
             echo '<th>House Id</th>';
@@ -100,12 +104,13 @@
             echo '<td>' . $row['wc_canals'] . '</td>';
             echo '<td>' . $row['wc_vendor'] . '</td>';
             echo '<td>' . $row['total_wc'] . '</td>';
-            echo '<td>' . $row['total_wc']*0.8 . '</td>';
+            echo '<td>' . $row['wc_canals']*0.8+$row['wc_vendor']*1.2. '</td>';
             echo '</tr>';
         }
         
         // Close the table
         echo '</table>';
+                  echo "<iframe frameborder='0' width='500px' height='320px' scrolling='no' src='data-visualization.php'>";
       } 
       else {
           // If there are no results, display a message

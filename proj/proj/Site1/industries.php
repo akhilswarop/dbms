@@ -123,9 +123,9 @@
         $sql = "INSERT INTO industries(i_id, i_address, i_name, c_name) VALUES ('$i_id', '$i_address', '$i_name', '$c_name');";
         
         if (mysqli_query($conn, $sql)) {
-            echo "\nNew record created successfully";
+          echo "<p style='color:green;text-align:center;'>New record created successfully</p>";
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          echo "<p style='color:red;text-align:center;'>Error</p>" . $sql . "<br>" . mysqli_error($conn);
         }
         
         mysqli_close($conn);}

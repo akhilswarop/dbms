@@ -6,6 +6,13 @@
     <meta name="description" content="">
     <title>VENDOR</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
+<style>
+      input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+</style>
 <link rel="stylesheet" href="VENDOR.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
@@ -24,6 +31,7 @@
     <meta property="og:title" content="VENDOR">
     <meta property="og:type" content="website">
   </head>
+  
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-1607"><div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
         <a href="ADMIN.php" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-1">ADMIN</a>
         <a href="Home.php" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500" title="Home">
@@ -48,7 +56,7 @@
                   <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-2">
                     <div class="u-container-layout u-valign-top u-container-layout-2">
                       <div class="u-form u-form-1">
-                        <form action="https://forms.nicepagesrv.com/Form/Process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="email" name="form-5">
+                        <form method="post" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="email" name="form-5">
                           <div class="u-form-group u-form-name u-label-top">
                             <label for="name-5359" class="u-label">VENDOR ID</label>
                             <input type="text" placeholder="Vendor_id" id="name-5359" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="">
@@ -57,17 +65,59 @@
                             <label for="text-03e4" class="u-label">VENDOR NAME</label>
                             <input type="text" placeholder="enter vendor name" id="text-03e4" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
                           </div>
-                          <div class="u-form-group u-form-submit u-label-top">
-                            <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-palette-1-light-2 u-btn-1">Submit</a>
-                            <input type="submit" value="submit" class="u-form-control-hidden">
-                          </div>
-                          <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
-                          <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
-                          <input type="hidden" value="" name="recaptchaResponse">
-                          <input type="hidden" name="formServices" value="d568939bf274436eab60a7597d46000b">
+                         
+                            
+                            <input type="submit" value="Submit" name="submit">
+                  
                         </form>
+                        
+                        <?php
+        $host = "localhost";
+        $user = "root";
+        $password = "";
+        $dbname = "water_distribution";
+        
+        $conn = mysqli_connect($host, $user, $password, $dbname);
+        echo "<p style='color:green; text-align:center;'>Connected Succesfully</p>";
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+  if (isset($_POST['submit'])) {
+    $v_id = $_POST['name'];
+    $v_name = $_POST['text'];
+    $query = "SELECT h.wc_vendor,v.v_id,v.v_name
+    FROM house h
+    JOIN orders o ON h.h_id = o.h_id
+    JOIN vendor v ON o.v_id = v.v_id 
+    WHERE v.v_id = '$v_id' AND v.v_name = '$v_name'";
+    $result = mysqli_query($conn, $query);
+    if ($result) {
+      // Fetch each row of the result set and display it as a table row
+      echo '<table style="margin: 0 auto;" border="1">';
+      // Fetch each row of the result set and display it as a table row
+      while ($row = mysqli_fetch_assoc($result)){
+                echo "<h4 style='text-align:center;'>Total Turnover</h3>";
+        echo '<tr>';
+        echo '<th>Vendor Id</th>';
+        echo '<th>Vendor Name</th>';
+        echo '<th>Litres Sold </th>';
+        echo '<th>Turnover</th>';
+        echo '</tr>';
+        echo '<tr>';
+        echo '<td>' . $row['v_id'] . '</td>';
+        echo '<td>' . $row['v_name'] . '</td>';
+        echo '<td>' . $row['wc_vendor'] . '</td>';
+        echo '<td>' . $row['wc_vendor']*0.8 . '</td>';
+    }
+    
+    // Close the table
+    echo '</table>';
+    }
+  }
+        ?>
                       </div>
                     </div>
+                    
                   </div>
                 </div>
               </div>

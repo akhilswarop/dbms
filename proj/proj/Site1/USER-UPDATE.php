@@ -90,7 +90,7 @@
   $query = "SELECT * FROM house WHERE h_id='$house_id'";
   $result = mysqli_query($conn, $query);
   if ((mysqli_num_rows($result) > 0)&&$password==$pass) {
-      $query = mysqli_query($conn,"UPDATE house set ph_no='$new' where ph_no='$old && h_id='$house_id';");
+      $query = mysqli_query($conn,"UPDATE house set ph_no='$new' where ph_no='$old' && h_id='$house_id';");
                   echo "<p style=text-align:center;color:green>Success!</p>";
   } else {
     echo "<p style=text-align:center;color:red>No match found!</p>";;

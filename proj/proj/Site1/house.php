@@ -13,23 +13,7 @@
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
-    <?php
-  // Set the login and password values
-  $login = "admin";
-  $password = "password";
-
-  // Check if the login and password match the predetermined values
-  if (isset($_POST["submit"])) {
-    if ($_POST["login"] == $login && $_POST["password"] == $password) {
-      // Redirect the user to the next page
-      header("admin");
-      exit;
-    } else {
-      // Display an error message
-      echo "Invalid login or password";
-    }
-  }
-?>
+    
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -137,9 +121,9 @@
         $sql = "INSERT INTO house(h_id, address, ph_no, c_name) VALUES ('$h_id', '$h_address', '$ph_no', '$c_name');";
         
         if (mysqli_query($conn, $sql)) {
-            echo "\nNew record created successfully";
+            echo "<p style='color:green;text-align:center;'>New record created successfully</p>";
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            echo "<p style='color:red;text-align:center;'>Error</p>" . $sql . "<br>" . mysqli_error($conn);
         }
         
         mysqli_close($conn);}
