@@ -13,7 +13,13 @@
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
-    
+    <style>
+    input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+    </style>
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -25,12 +31,12 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-1607"><div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
-        <a href="ADMIN.html" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-1">ADMIN</a>
-        <a href="Home.html" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500" title="Home">
+        <a href="ADMIN.php" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-1">ADMIN</a>
+        <a href="Home.php" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500" title="Home">
           <img class="u-logo-image u-logo-image-1" src="images/TWAD-Board-Recruitment.png">
         </a>
-        <a href="VENDOR.html" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-2">VENDOR</a>
-        <a href="Home.html#sec-77dc" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-3">CONSUMER</a>
+        <a href="VENDOR.php" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-2">VENDOR</a>
+        <a href="Home.php#sec-77dc" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-3">CONSUMER</a>
       </div></header>
     <section class="u-align-center u-clearfix u-image u-shading u-section-1" id="sec-e3c7" data-image-width="1280" data-image-height="853">
       <div class="u-clearfix u-sheet u-sheet-1">
@@ -39,25 +45,69 @@
           <div class="u-container-layout u-container-layout-1">
             <h2 class="u-align-center u-text u-text-default u-text-1">Industry Bill</h2>
             <div class="u-form u-form-1">
-              <form action="https://forms.nicepagesrv.com/Form/Process" class="u-clearfix u-form-spacing-37 u-form-vertical u-inner-form" style="padding: 28px;" source="email" name="form">
+              <form method="post" class="u-clearfix u-form-spacing-37 u-form-vertical u-inner-form" style="padding: 28px;" source="email" name="form">
                 <div class="u-form-group u-form-name">
                   <label for="name-f18c" class="u-label">INDUSTRY ID</label>
                   <input type="text" placeholder="Enter your Industry_Id" id="name-f18c" name="name" class="u-grey-5 u-input u-input-rectangle u-input-1" required="">
                 </div>
                 <div class="u-form-email u-form-group">
                   <label for="email-f18c" class="u-label">PASSWORD</label>
-                  <input type="email" placeholder="Your Password is your Company Name" id="email-f18c" name="email" class="u-grey-5 u-input u-input-rectangle u-input-2" required="">
+                  <input type="password" placeholder="Your Password is your Company Name" id="email-f18c" name="email" class="u-grey-5 u-input u-input-rectangle u-input-2" required="">
                 </div>
-                <div class="u-align-right u-form-group u-form-submit">
-                  <a href="#" class="u-black u-btn u-btn-submit u-button-style u-btn-1">GENERATE BILL<br>
-                  </a>
-                  <input type="submit" value="submit" class="u-form-control-hidden">
-                </div>
-                <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                <input type="hidden" value="" name="recaptchaResponse">
-                <input type="hidden" name="formServices" value="d568939bf274436eab60a7597d46000b">
+
+                <input type="submit" name="submit" value="Submit">
+
+          
               </form>
+              <?php
+        $host = "localhost";
+        $user = "root";
+        $password = "";
+        $dbname = "water_distribution";
+        
+        $conn = mysqli_connect($host, $user, $password, $dbname);
+        
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        echo "<p style='color:green; text-align:center;'>Connected Successfully!</p>";
+        if(isset($_POST['submit'])){
+        $i_id = $_POST['name'];
+        $pass = $_POST['email'];
+        $query = "Select * from industries where i_id='$i_id' && i_name='$pass'";
+        $result = mysqli_query($conn, $query);
+        if ($result) {
+          echo '<table border="1">';
+          // Fetch each row of the result set and display it as a table row
+          while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<h4 style='text-align:center;'>Total Bill</h3>";
+            echo '<tr>';
+            echo '<th>Industry Id</th>';
+            echo '<th>Address</th>';
+            echo '<th>Company name </th>';
+            echo '<th>Total Water Consumed (Litres)</th>';
+            echo '<th>Total Bill</th>';
+            echo '</tr>';
+            echo '<tr>';
+            echo '<td>' . $row['i_id'] . '</td>';
+            echo '<td>' . $row['i_address'] . '</td>';
+            echo '<td>' . $row['i_name'] . '</td>';
+            echo '<td>' . $row['wc'] . '</td>';
+            echo '<td>' . $row['wc']*0.8 . '</td>';
+            echo '</tr>';
+        }
+        
+        // Close the table
+        echo '</table>';
+      } 
+      else {
+          // If there are no results, display a message
+          echo "<p style='color:red;'>No results found</p>";
+      }
+      
+        mysqli_close($conn);}
+
+      ?>
             </div>
           </div>
         </div>

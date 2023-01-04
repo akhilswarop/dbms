@@ -12,7 +12,13 @@
     <meta name="generator" content="Nicepage 5.1.5, nicepage.com">
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
+    <style>
+  input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+    </style>
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -25,12 +31,12 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-1607"><div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
-        <a href="ADMIN.html" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-1">ADMIN</a>
-        <a href="Home.html" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500" title="Home">
+        <a href="ADMIN.php" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-1">ADMIN</a>
+        <a href="Home.php" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500" title="Home">
           <img class="u-logo-image u-logo-image-1" src="images/TWAD-Board-Recruitment.png">
         </a>
-        <a href="VENDOR.html" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-2">VENDOR</a>
-        <a href="Home.html#sec-77dc" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-3">CONSUMER</a>
+        <a href="VENDOR.php" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-2">VENDOR</a>
+        <a href="Home.php" class="u-active-black u-border-1 u-border-active-black u-border-grey-30 u-border-hover-black u-btn u-btn-round u-button-style u-gradient u-hover-black u-none u-radius-5 u-text-active-white u-text-hover-white u-btn-3">CONSUMER</a>
       </div></header>
     <section class="u-align-center u-clearfix u-image u-shading u-section-1" id="sec-dd88" data-image-width="1280" data-image-height="853">
       <div class="u-clearfix u-sheet u-sheet-1">
@@ -57,8 +63,7 @@
                   <textarea id="date-33f9" name="Name-2" class="u-grey-5 u-input u-input-rectangle u-input-4" required="required" placeholder="Enter new Company Name"></textarea>
                 </div>
                   <input type="submit" value="Submit" name="submit" >
-              <div style="width: 50%;  margin: 0 auto; margin-bottom: 10px;text-align: center;">
-
+</form>
               <?php
   $host = "localhost";
   $user = "root";
@@ -69,8 +74,6 @@
   if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-  echo "Connected Succesfully\n";
-  
   if(isset($_POST["submit"])){
     $i_id = $_POST['email'];
     $password=$_POST['name'];
@@ -82,7 +85,7 @@
   if ((mysqli_num_rows($result) > 0)&&$password==$pass) {
       
       $query = mysqli_query($conn,"UPDATE industries set i_name='$new' where i_name='$old' && i_id='$i_id';");
-                  echo "<p style=text-align:center;color:green>Success!</p>";
+                  echo "<br><p style=text-align:center;color:green>Success!</p>";
   } else {
     echo "<p style=text-align:center;color:red>No match found!</p>";
   }}

@@ -89,7 +89,7 @@
               </div>
               <div class="u-align-center u-container-style u-layout-cell u-size-20-xl u-size-27-lg u-size-60-md u-size-60-sm u-size-60-xs u-white u-layout-cell-2">
                 <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <a href="USER-BILL.html" class="u-active-black u-border-none u-btn u-button-style u-hover-black u-palette-4-base u-btn-1">GENERATE BILL</a>
+                  <a href="USER-BILL.php" class="u-active-black u-border-none u-btn u-button-style u-hover-black u-palette-4-base u-btn-1">GENERATE BILL</a>
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@
         <h2 class="u-text u-text-body-alt-color u-text-default u-text-1">Consumer Update</h2>
         <div class="u-expanded-width-xs u-list u-list-1">
           <div class="u-repeater u-repeater-1">
-            <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle" data-href="USER-UPDATE.html" title="USER UPDATE">
+            <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle" data-href="USER-UPDATE.php" title="USER UPDATE">
               <div class="u-container-layout u-similar-container u-container-layout-1">
                 <a href="USER-UPDATE.php">
                 <div alt="" class="u-border-12 u-border-white u-hover-feature u-image u-image-circle u-image-1" data-image-width="1280" data-image-height="853"></div>
