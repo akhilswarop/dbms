@@ -39,14 +39,14 @@
           <div class="u-container-layout u-container-layout-1">
             <h2 class="u-align-center u-text u-text-default u-text-1">Update Your Industry Details</h2>
             <div class="u-form u-form-1">
-              <form action="https://forms.nicepagesrv.com/Form/Process" class="u-clearfix u-form-spacing-37 u-form-vertical u-inner-form" style="padding: 24px;" source="email" name="form">
+              <form method="post" class="u-clearfix u-form-spacing-37 u-form-vertical u-inner-form" style="padding: 24px;" source="email" name="form">
                 <div class="u-form-email u-form-group u-form-partition-factor-2">
                   <label for="email-f18c" class="u-label">INDUSTRY ID</label>
-                  <input type="email" placeholder="Enter your Industry_Id" id="email-f18c" name="email" class="u-grey-5 u-input u-input-rectangle u-input-1" required="">
+                  <input type="text" placeholder="Enter your Industry_Id" id="email-f18c" name="email" class="u-grey-5 u-input u-input-rectangle u-input-1" required="">
                 </div>
                 <div class="u-form-group u-form-name u-form-partition-factor-2">
                   <label for="name-f18c" class="u-label">PASSWORD</label>
-                  <input type="text" placeholder="Enter your Password" id="name-f18c" name="name" class="u-grey-5 u-input u-input-rectangle u-input-2" required="">
+                  <input type="password" placeholder="Enter your Password" id="name-f18c" name="name" class="u-grey-5 u-input u-input-rectangle u-input-2" required="">
                 </div>
                 <div class="u-form-group u-form-message u-form-group-3">
                   <label for="phone-cbff" class="u-label">CURRRENT COMPANY NAME</label>
@@ -54,17 +54,40 @@
                 </div>
                 <div class="u-form-group u-form-message u-form-group-4">
                   <label for="date-33f9" class="u-label">NEW COMPANY NAME</label>
-                  <textarea id="date-33f9" name="Name-1" class="u-grey-5 u-input u-input-rectangle u-input-4" required="required" placeholder="Enter new Company Name"></textarea>
+                  <textarea id="date-33f9" name="Name-2" class="u-grey-5 u-input u-input-rectangle u-input-4" required="required" placeholder="Enter new Company Name"></textarea>
                 </div>
-                <div class="u-align-left u-form-group u-form-submit">
-                  <a href="#" class="u-black u-btn u-btn-submit u-button-style u-btn-1">Submit</a>
-                  <input type="submit" value="submit" class="u-form-control-hidden">
-                </div>
-                <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                <input type="hidden" value="" name="recaptchaResponse">
-                <input type="hidden" name="formServices" value="d568939bf274436eab60a7597d46000b">
-              </form>
+                  <input type="submit" value="Submit" name="submit" >
+              <div style="width: 50%;  margin: 0 auto; margin-bottom: 10px;text-align: center;">
+
+              <?php
+  $host = "localhost";
+  $user = "root";
+  $password = "";
+  $dbname = "water_distribution";
+  $conn = mysqli_connect($host, $user, $password, $dbname);
+  
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+  echo "Connected Succesfully\n";
+  
+  if(isset($_POST["submit"])){
+    $i_id = $_POST['email'];
+    $password=$_POST['name'];
+    $old=$_POST['Name-1'];
+    $new=$_POST['Name-2']; // get the house ID from the form submission
+    $pass="password";
+  $query = "SELECT * FROM industries WHERE i_id='$i_id'";
+  $result = mysqli_query($conn, $query);
+  if ((mysqli_num_rows($result) > 0)&&$password==$pass) {
+      
+      $query = mysqli_query($conn,"UPDATE industries set i_name='$new' where i_name='$old' && i_id='$i_id';");
+                  echo "<p style=text-align:center;color:green>Success!</p>";
+  } else {
+    echo "<p style=text-align:center;color:red>No match found!</p>";
+  }}
+    ?>
+</div>
             </div>
           </div>
         </div>

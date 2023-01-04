@@ -143,8 +143,9 @@
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle" data-href="INDUSTRY-UPDATE.php" title="INDUSTRY UPDATE">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+                <a href="INDUSTRY-UPDATE.php">
                 <div alt="" class="u-border-12 u-border-white u-hover-feature u-image u-image-circle u-image-1" data-image-width="1280" data-image-height="853"></div>
-                <h6 class="u-text u-text-body-alt-color u-text-default-xl u-text-2">update industry name</h6>
+                <h6 class="u-text u-text-body-alt-color u-text-default-xl u-text-2">update industry name</h6></a>
                 <p class="u-text u-text-body-alt-color u-text-3"> By clicking this you will be redireted to a form using which you can update your current registered industry name</p>
               </div>
             </div>

@@ -1,38 +1,18 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
-  <?php
-  $host = "localhost";
-  $user = "root";
-  $password = "";
-  $dbname = "water_distribution";
-  $conn = mysqli_connect($host, $user, $password, $dbname);
   
-  if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-  echo "Connected Succesfully\n";
-  $house_id = $_POST['email'];
-  $password=$_POST['name'];
-  $old=$_POST['name1'];
-  $new=$_POST['name2']; // get the house ID from the form submission
-  $pass="password";
-
-
-// check if the house ID exists in the `house` table
-$query = "SELECT * FROM house WHERE house_id='$house_id'";
-$result = mysqli_query($conn, $query);
-if(isset($_POST["submit"])){
-if ((mysqli_num_rows($result) > 0)&&$password==$pass) {
-    $query = mysqli_query($conn,"UPDATE house set ph_no=$new where ph_no=$old;");
-} else {
-    echo "No match found.";
-}}
-    ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Update Your User Details">
     <meta name="description" content="">
     <title>USER UPDATE</title>
+    <style>
+  input[type="submit"] {
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+}
+  </style>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="USER-UPDATE.css" media="screen">
     <!script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
@@ -40,8 +20,7 @@ if ((mysqli_num_rows($result) > 0)&&$password==$pass) {
     <meta name="generator" content="Nicepage 5.1.5, nicepage.com">
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <?php
-    ?>
+
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -71,11 +50,11 @@ if ((mysqli_num_rows($result) > 0)&&$password==$pass) {
               <form method="post" class="u-clearfix u-form-spacing-37 u-form-vertical u-inner-form" style="padding: 24px;" source="email" name="form">
                 <div class="u-form-email u-form-group u-form-partition-factor-2">
                   <label for="email-f18c" class="u-label">HOUSE ID</label>
-                  <input type="email" placeholder="Enter your House ID" id="email-f18c" name="email" class="u-grey-5 u-input u-input-rectangle u-input-1" required="">
+                  <input type="text" placeholder="Enter your House ID" id="email-f18c" name="email" class="u-grey-5 u-input u-input-rectangle u-input-1" required="">
                 </div>
                 <div class="u-form-group u-form-name u-form-partition-factor-2">
                   <label for="name-f18c" class="u-label">PASSWORD</label>
-                  <input type="text" placeholder="Enter your Password" id="name-f18c" name="name" class="u-grey-5 u-input u-input-rectangle u-input-2" required="">
+                  <input type="password" placeholder="Enter your Password" id="name-f18c" name="name" class="u-grey-5 u-input u-input-rectangle u-input-2" required="">
                 </div>
                 <div class="u-form-group u-form-phone u-form-group-3">
                   <label for="phone-cbff" class="u-label">CURRRENT PHONE NUMBER</label>
@@ -88,11 +67,36 @@ if ((mysqli_num_rows($result) > 0)&&$password==$pass) {
                 <div class="u-align-left u-form-group u-form-submit">
 
                   <input type="submit" value="Submit" name="submit" >
-                </div>
-                <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                <input type="hidden" value="" name="recaptchaResponse">
-                <input type="hidden" name="formServices" value="d568939bf274436eab60a7597d46000b">
+                  <div style="width: 50%;  margin: 0 auto; margin-bottom: 10px;text-align: center;">
+
+              <?php
+  $host = "localhost";
+  $user = "root";
+  $password = "";
+  $dbname = "water_distribution";
+  $conn = mysqli_connect($host, $user, $password, $dbname);
+  
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+  echo "Connected Succesfully\n";
+  
+  if(isset($_POST["submit"])){
+    $house_id = $_POST['email'];
+    $password=$_POST['name'];
+    $old=$_POST['name1'];
+    $new=$_POST['name2']; // get the house ID from the form submission
+    $pass="password";
+  $query = "SELECT * FROM house WHERE h_id='$house_id'";
+  $result = mysqli_query($conn, $query);
+  if ((mysqli_num_rows($result) > 0)&&$password==$pass) {
+      $query = mysqli_query($conn,"UPDATE house set ph_no='$new' where ph_no='$old && h_id='$house_id';");
+                  echo "<p style=text-align:center;color:green>Success!</p>";
+  } else {
+    echo "<p style=text-align:center;color:red>No match found!</p>";;
+  }}
+    ?>
+</div>
               </form>
             </div>
           </div>
